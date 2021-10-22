@@ -1,0 +1,2 @@
+*/15 * * * * ( cd /ghec-audit-log-cli && ./pull-logs.sh )
+0 0 * * * /usr/local/bin/vector

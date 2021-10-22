@@ -1,0 +1,23 @@
+[sources.github]
+  type = "file"
+  include = ["/ghec-audit-log-cli/audit-log-output.json"]
+
+[sinks.cloudwatch]
+  # Auth
+  auth.assume_role = "arn:aws:iam::958020687612:role/vector"
+
+  # General
+  type = "aws_cloudwatch_logs"
+  inputs = ["github"]
+  compression = "none"
+  create_missing_group = true
+  create_missing_stream = true
+  group_name = "github"
+  region = "us-east-1"
+  stream_name = "github-audit-logs"
+
+  # Encoding
+  encoding.codec = "json"
+
+  # Healthcheck
+  healthcheck.enabled = false
