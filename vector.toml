@@ -4,7 +4,7 @@
 
 [sinks.cloudwatch]
   # Auth
-  auth.assume_role = "arn:aws:iam::958020687612:role/vector"
+  auth.assume_role = "arn:aws:iam::*********:role/vector"
 
   # General
   type = "aws_cloudwatch_logs"
